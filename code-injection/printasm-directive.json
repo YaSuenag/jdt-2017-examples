@@ -1,0 +1,26 @@
+[
+  {
+    match: "SyscallTest$GetPID.getPid",
+    PrintAssembly: true
+  },
+  {
+    match: "FuncLoader.loadLibrary",
+    PrintAssembly: true
+  },
+  {
+    match: "FuncLoader.getFuncAddr",
+    PrintAssembly: true
+  },
+  {
+    match: "LibCFuncTest$GetUID.getUid",
+    PrintAssembly: true
+  },
+  {
+    match: "DynCallTest.callNative",
+    PrintAssembly: true
+  },
+  {
+    match: "PAddTest$PAddInt.padd",
+    PrintAssembly: true
+  }
+]

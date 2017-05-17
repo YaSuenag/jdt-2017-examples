@@ -1,0 +1,3 @@
+*.class
+*.so
+code-injection/jdk/**/*.java
