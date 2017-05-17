@@ -2,6 +2,7 @@
 
 * http://www.oracle.co.jp/events/javaday/2017/
     * D1-C1: Panamaを先取り！？　JVMTIでJITと遊ぶ
+    * https://www.slideshare.net/YaSuenag/panamajvmcijit
 
 ## Requirements
 
