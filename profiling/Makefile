@@ -3,14 +3,15 @@
 
 JAVA ?= $(JAVA_HOME)/bin/java
 JAVAC ?= $(JAVA_HOME)/bin/javac
-JAVA_OPTS += --permit-illegal-access \
-             -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI
 
 ADD_MODULES = --add-modules jdk.internal.vm.ci
 EXPORT_MODULES = \
   --add-exports jdk.internal.vm.ci/jdk.vm.ci.runtime=ALL-UNNAMED \
   --add-exports jdk.internal.vm.ci/jdk.vm.ci.hotspot=ALL-UNNAMED \
   --add-exports jdk.internal.vm.ci/jdk.vm.ci.meta=ALL-UNNAMED
+
+JAVA_OPTS += $(ADD_MODULES) $(EXPORT_MODULES) \
+  -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI
 
 JAVA_CLASSES = TestBase.class \
                CompLevel.class \

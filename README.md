@@ -8,17 +8,20 @@
 
 * GCC
 * GNU make
-* JDK 9 EA b163 or later
-* Test source of JVMCI (included in HotSpot source)
+* JDK 9 or later
+* Test source of JVMCI (included in OpenJDK source code)
 
 ## How to build
 
 ```
-$ cp <hotspot src>/test/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/TestAssembler.java code-injection/jdk/vm/ci/code/test/
-$ cp <hotspot src>/test/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/TestHotSpotVMConfig.java code-injection/jdk/vm/ci/code/test/
-$ cp <hotspot src>/test/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/amd64/AMD64TestAssembler.java code-injection/jdk/vm/ci/code/test/amd64/
+$ cp <openjdk src>test/hotspot/jtreg/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/TestAssembler.java code-injection/jdk/vm/ci/code/test/
+$ cp <openjdk src>test/hotspot/jtreg/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/TestHotSpotVMConfig.java code-injection/jdk/vm/ci/code/test/
+$ cp <openjdk src>test/hotspot/jtreg/compiler/jvmci/jdk.vm.ci.code.test/src/jdk/vm/ci/code/test/amd64/AMD64TestAssembler.java code-injection/jdk/vm/ci/code/test/amd64/
 $ make JAVA_HOME=/path/to/jdk9
 ```
+
+**If you want to run this example on JDK 9, you might need to change the C++ type of `classMirrorHandleOffset` to `oop` in `TestHotSpotVMConfig.java` .**
+[JDK-8186777](https://bugs.openjdk.java.net/browse/JDK-8186777) changes this type to `OopHandle` . So you might see `JVMCIError` on your console.
 
 ## How to run tests
 

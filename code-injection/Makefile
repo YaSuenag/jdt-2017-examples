@@ -3,12 +3,6 @@
 
 JAVA ?= $(JAVA_HOME)/bin/java
 JAVAC ?= $(JAVA_HOME)/bin/javac
-JAVA_OPTS += --permit-illegal-access \
-             -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI
-
-# If you disassemble with hsdis, please enable here:
-#JAVA_OPTS += -XX:+UnlockDiagnosticVMOptions \
-#             -XX:CompilerDirectivesFile=printasm-directive.json
 
 ADD_MODULES = --add-modules jdk.internal.vm.ci \
               --add-modules jdk.internal.vm.compiler
@@ -21,6 +15,14 @@ EXPORT_MODULES = \
   --add-exports jdk.internal.vm.ci/jdk.vm.ci.amd64=ALL-UNNAMED \
   --add-exports jdk.internal.vm.compiler/org.graalvm.compiler.api.runtime=ALL-UNNAMED \
   --add-exports jdk.internal.vm.compiler/org.graalvm.compiler.hotspot=ALL-UNNAMED
+
+JAVA_OPTS += $(ADD_MODULES) $(EXPORT_MODULES) \
+             --add-opens jdk.internal.vm.ci/jdk.vm.ci.hotspot=ALL-UNNAMED \
+             -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI
+
+# If you disassemble with hsdis, please enable here:
+#JAVA_OPTS += -XX:+UnlockDiagnosticVMOptions \
+#             -XX:CompilerDirectivesFile=printasm-directive.json
 
 JAVA_CLASSES = jdk/vm/ci/code/test/TestAssembler.class \
                jdk/vm/ci/code/test/TestHotSpotVMConfig.class \
