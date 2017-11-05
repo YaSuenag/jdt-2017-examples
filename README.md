@@ -4,6 +4,8 @@
     * D1-C1: Panamaを先取り！？　JVMTIでJITと遊ぶ
     * https://www.slideshare.net/YaSuenag/panamajvmcijit
 
+**If you want to check original source which is introduced in this presentation, please checkout `jdt-2017-session` tag.**
+
 ## Requirements
 
 * GCC
