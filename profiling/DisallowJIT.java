@@ -5,7 +5,7 @@ public class DisallowJIT extends TestBase{
 
   public static void main(String[] args) throws Exception{
     HotSpotResolvedJavaMethod resolvedMethod = getResolvedMethod();
-    resolvedMethod.setNotInlineable();
+    resolvedMethod.setNotInlinableOrCompilable();
 
     runLoop(1000000);
 
