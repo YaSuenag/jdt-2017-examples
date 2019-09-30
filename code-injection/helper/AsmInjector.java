@@ -52,6 +52,7 @@ public class AsmInjector{
     asm.emitEpilogue();
 
     HotSpotCompiledCode code = asm.finish(resolvedMethod);
+    resolvedMethod.setNotInlinableOrCompilable();
     return codeCache.setDefaultCode(resolvedMethod, code);
   }
 
@@ -78,6 +79,7 @@ public class AsmInjector{
     asm.emitEpilogue();
 
     HotSpotCompiledCode code = asm.finish(resolvedMethod);
+    resolvedMethod.setNotInlinableOrCompilable();
     return codeCache.setDefaultCode(resolvedMethod, code);
   }
 
@@ -99,6 +101,7 @@ public class AsmInjector{
     asm.emitEpilogue();
 
     HotSpotCompiledCode code = asm.finish(resolvedMethod);
+    resolvedMethod.setNotInlinableOrCompilable();
     return codeCache.setDefaultCode(resolvedMethod, code);
   }
 
@@ -112,6 +115,7 @@ public class AsmInjector{
     asm.emitEpilogue();
 
     HotSpotCompiledCode code = asm.finish(resolvedMethod);
+    resolvedMethod.setNotInlinableOrCompilable();
     return codeCache.setDefaultCode(resolvedMethod, code);
   }
 
@@ -125,6 +129,7 @@ public class AsmInjector{
     asm.emitEpilogue();
 
     HotSpotCompiledCode code = asm.finish(resolvedMethod);
+    resolvedMethod.setNotInlinableOrCompilable();
     return codeCache.setDefaultCode(resolvedMethod, code);
   }
 
@@ -145,6 +150,7 @@ public class AsmInjector{
     asm.emitEpilogue();
 
     HotSpotCompiledCode code = asm.finish(resolvedMethod);
+    resolvedMethod.setNotInlinableOrCompilable();
     return codeCache.setDefaultCode(resolvedMethod, code);
   }
 
